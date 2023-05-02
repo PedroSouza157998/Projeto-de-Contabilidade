@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css" />
-    <!-- <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script> -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
     <title>Projeto de Contabilidade</title>
 </head>
 
@@ -16,7 +16,7 @@
         <h4 class="h4-header">Insira no input abaixo o município do qual deseja obter informações:</h4>
         <input type="text" class="input-header" id="input_municipio" placeholder="Digite aqui o município...">
         <input type="text" class="input-header" id="input_estado" placeholder="Digite aqui a sigla do estado...">
-        <button type="submit" class="button-header" id="button_municipio" onClick="onSearch()">Visualizar
+        <button type="submit" class="button-header" id="button_municipio" py-click="visualizar_tabela()">Visualizar
             tabela</button>
     </header>
 
@@ -35,12 +35,7 @@
                 class="a-footer" href="https://github.com/PedroSouza157998" target="_blank">Pedro Souza</a>.
         </h4>
     </footer>
-    <!-- <script>
-        document.getElementById("main").innerHTML = "<h1>HelloWorld!!!</h1>"
-        console.log('teste')
-    </script> -->
-    <script src="./main.js"></script>
-    <!-- <py-script src="./main.py"></py-script> -->
+    <py-script src="./main.py"></py-script>
 </body>
 
 </html>
