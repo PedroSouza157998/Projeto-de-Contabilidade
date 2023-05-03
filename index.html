@@ -35,7 +35,47 @@
                 class="a-footer" href="https://github.com/PedroSouza157998" target="_blank">Pedro Souza</a>.
         </h4>
     </footer>
-    <py-script src="./main.py"></py-script>
+    <py-script>
+        from js import document, Element
+        import os
+
+        def transformar_caminho(url):
+            # Remover "file://" da URL
+            path = url.replace("file:///", "")
+
+            # Obter o diretório pai do arquivo index.html
+            dir_path = os.path.dirname(path)
+
+            # Concatenar o caminho completo para TabelaFinal.xlsx
+            xlsx_path = os.path.join(dir_path, "TabelaFinal.xlsx")
+
+            return xlsx_path
+
+        def visualizar_tabela():
+            print("/"+transformar_caminho(document.location.href))
+            print(open("/"+transformar_caminho(document.location.href), "r"))
+            # Ler o arquivo xlsx como csv
+            with open("/"+transformar_caminho(document.location.href), "r") as csvfile:
+                print(csvfile)
+                reader = csv.reader(csvfile)
+                rows = [row for row in reader]
+        
+            # Criar uma tabela HTML
+            table = document.createElement("table")
+        
+            # Adicionar as linhas da tabela xlsx na tabela HTML
+            for row in rows:
+                tr = document.createElement("tr")
+                for value in row:
+                    td = document.createElement("td")
+                    td.textContent = str(value)
+                    tr.appendChild(td)
+                table.appendChild(tr)
+        
+            # Adicionar a tabela HTML na tag main do html
+            main = Element("main")
+            main.appendChild(table)
+    </py-script>
 </body>
 
 </html>
