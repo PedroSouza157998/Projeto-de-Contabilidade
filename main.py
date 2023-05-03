@@ -1,6 +1,7 @@
 import openpyxl
 from pyscript import document, Element
 
+
 def visualizar_tabela():
     # Ler o arquivo xlsx
     wb = openpyxl.load_workbook("TabelaFinal.xlsx")
