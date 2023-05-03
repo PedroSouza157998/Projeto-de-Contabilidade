@@ -37,11 +37,11 @@ header {
 }
 
 .input-header {
-    border-width: 1px;
     width: 380px;
     padding: 15px;
     border-radius: 10px;
     outline: none;
+    border: none;
 }
 
 .button-header{
